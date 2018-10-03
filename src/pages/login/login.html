@@ -1,0 +1,54 @@
+<ion-content padding class="no-scroll" style="background: url(assets/img/home.png) no-repeat center; background-size: cover;">
+    <!-- Espaço  -->
+    <div class="spacer" style="width: 300px; height: 200px;"></div>
+
+    <form #form="ngForm" novalidate>
+        <ion-list>
+            <!-- Input: Email -->
+            <ion-item>
+                <ion-label><ion-icon name="ios-mail-outline"></ion-icon></ion-label>
+                <ion-input type="text" name="email" placeholder="E-mail" [(ngModel)]="user.email" #email="ngModel" required></ion-input>
+            </ion-item>
+            <!-- Input: Senha -->
+            <ion-item>
+                <ion-label><ion-icon name="ios-lock-outline"></ion-icon></ion-label>
+                <ion-input type="password" name="password" placeholder="Senha" [(ngModel)]="user.password" #password="ngModel" required></ion-input>
+            </ion-item>
+        </ion-list>
+
+        <!-- Botão: Login -->
+        <button ion-button color="secundary" block icon-left style="text-align: left;" [disabled]="!form.form.valid" on-click="goTologin()">
+            Login
+        </button>
+
+        <!-- Espaço -->
+        <div class="spacer" style="width: 300px; height: 20px;"></div>
+        <hr align="center" width="150" size="1"> <!-- Divisor -->
+        <div class="spacer" style="width: 300px; height: 10px;"></div>
+
+        <!-- Botão: Entrar com o Google -->
+        <button ion-button block icon-left color="google" margin-top (click)="signInWithGoogle()">
+            <ion-icon name="logo-google"></ion-icon>
+                Entrar com o Google
+        </button>
+
+        <!-- Botão: Entrar com o Facebook -->
+        <button ion-button block icon-left color="facebook" margin-top (click)="signInWithFacebook()">
+            <ion-icon name="logo-facebook"></ion-icon>
+                Entrar com o Facebook
+        </button>
+    </form>
+
+    <!-- Espaço -->
+    <div class="spacer" style="width: 300px; height: 10px;"></div>
+
+    <!-- Botão: Resetar Senha -->
+    <button ion-button color="grey" clear icon-left style="text-align: left;" on-click="goToResetarSenha()">
+        Recuperar Senha
+    </button>
+
+    <!-- Botão: Cadastrar-se -->
+    <button ion-button color="grey" clear icon-left style="text-align: left;" on-click="goToCriarConta()">
+        &nbsp; Criar Conta
+    </button>
+</ion-content>

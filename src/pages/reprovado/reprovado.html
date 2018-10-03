@@ -1,0 +1,17 @@
+<ion-content padding class="no-scroll" style="background: url(assets/img/reprovado.png) no-repeat center; background-size: cover; background-color: #F0F0F0;" id="page4">
+  <!-- Botão: retornar -->
+  <button id="reprovado-button1" ion-button icon-only color="positive" icon-left on-click="goBack()">
+    <ion-icon name="arrow-back"></ion-icon>
+  </button>
+  <!-- Espaço -->
+  <div class="spacer" style="height: 230px;" id="reprovado-spacer1"></div>
+  <!-- Média -->
+  <div id="reprovado-markdown1" style="text-align: center;" class="show-list-numbers-and-dots">
+    <p style="color: #FFFFFF; font-size: 120px;">
+      <strong>
+        <!-- Média -->
+        {{ resultado_final.resultado }}
+      </strong>
+    </p>
+  </div>
+</ion-content>

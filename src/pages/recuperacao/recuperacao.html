@@ -1,0 +1,19 @@
+<ion-content padding class="no-scroll" style="background: url(assets/img/recuperacao.png) no-repeat center; background-size: cover; background-color: #F0F0F0;" id="page3">
+  <!-- Botão: retornar -->
+  <button id="recuperacao-button1" ion-button icon-only color="positive" icon-left on-click="goBack()">
+    <ion-icon name="arrow-back"></ion-icon>
+  </button>
+  <!-- Texto/Feedback: Média -->
+  <p style="color:#FFFFFF; font-size: 12px;"> Média: {{ resultado_final.resultado }} </p>
+  <!-- Espaço -->
+  <div class="spacer" style="height: 190px;" id="recuperacao-spacer1"></div>
+  <!-- Nota necessária na recuperação -->
+  <div id="recuperacao-markdown1" style="text-align: center;" class="show-list-numbers-and-dots">
+    <p style="color:#FFFFFF; font-size: 120px;">
+      <strong>
+        <!-- nota de recuperação = (12 - Média) -->
+        {{ notaRecuperacao }}
+      </strong>
+    </p>
+  </div>
+</ion-content>

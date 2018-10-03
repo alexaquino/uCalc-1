@@ -1,0 +1,23 @@
+<ion-content padding class="no-scroll" style="background: url(assets/img/home.png) no-repeat center; background-size: cover;">
+    <!-- Botão: retornar -->
+    <button id="aprovado-button1" ion-button icon-only color="positive" icon-left on-click="goBack()">
+        <ion-icon name="arrow-back"></ion-icon>
+    </button>
+    <!-- Espaço -->
+    <div class="spacer" style="width: 300px; height: 220px;"></div>
+
+    <form #form="ngForm" novalidate>
+        <ion-list>
+            <!-- Input: Email -->
+            <ion-item>
+                <ion-label><ion-icon name="ios-mail-outline"></ion-icon></ion-label>
+                <ion-input type="text" name="email" placeholder="E-mail" [(ngModel)]="userEmail" #email="ngModel" required></ion-input>
+            </ion-item>
+        </ion-list>
+
+        <!-- Botão: Recuperar Senha -->
+        <button ion-button color="secundary" block icon-left style="text-align: left;" on-click="goToResetarSenha()">
+            Recuperar Senha
+        </button>
+    </form>
+</ion-content>

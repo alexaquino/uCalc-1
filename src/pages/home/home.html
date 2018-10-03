@@ -1,0 +1,94 @@
+<ion-content padding class="no-scroll" style="background: url(assets/img/home.png) no-repeat center; background-size: cover; background-color: #FFFFFF;" id="page1">
+    <!-- Botão: retornar -->
+    <button ion-button icon-only clear color="grey" on-click="signOut()">
+        <ion-icon name="ios-log-out"></ion-icon>
+    </button>
+  <!-- Espaço -->
+  <div class="spacer" style="width: 300px; height: 130px;" id="home-spacer14"></div>
+  <!-- Inputs: Notas unidade_1, unidade_2, unidade_3 e Botões: Calcular, Ajuda, Disciplinas 30h -->
+    <!-- Espaço -->
+    <div class="spacer" style="width: 300px; height: 10px;" id="home-spacer16"></div>
+    <!-- unidade_1 -->
+    <ion-item id="home-input1">
+      <ion-label></ion-label>
+      <ion-input type="number" [(ngModel)]="unidade_1" name="u1" placeholder="1ª Unidade"></ion-input>
+    </ion-item>
+    <!-- Espaço -->
+    <!-- unidade_2 -->
+    <ion-item id="home-input2">
+      <ion-label></ion-label>
+      <ion-input type="number" [(ngModel)]="unidade_2" name="u2" placeholder="2ª Unidade"></ion-input>
+    </ion-item>
+    <!-- Espaço -->
+    <!-- unidade_3 -->
+    <ion-item id="home-input3">
+      <ion-label></ion-label>
+      <ion-input type="number" [(ngModel)]="unidade_3" name="u3" placeholder="3ª Unidade"></ion-input>
+    </ion-item>
+    <!-- Espaço -->
+    <div class="spacer" style="width: 300px; height: 15px;" id="home-spacer16"></div>
+    <!-- Switch Case: Aprovado, Recuperação, Reprovado -->
+    <div [ngSwitch]="resultadoFinal">
+        <!-- Aprovado -->
+        <div *ngSwitchCase="'aprovado'">
+            <button id="home-button1" ion-button color="primary" clear icon-left style="text-align: left;" on-click="goToAprovado()">
+              <ion-icon name="school"></ion-icon>
+              Calcular Resultado
+            </button>
+        </div>
+        <!-- Reprovado -->
+        <div *ngSwitchCase="'reprovado'">
+            <button id="home-button2" ion-button color="primary" block icon-left style="text-align: left;" on-click="goToReprovado()">
+              <ion-icon name="school"></ion-icon>
+              Calcular Resultado
+            </button>
+        </div>
+        <!-- Recuperação -->
+        <div *ngSwitchCase="'recuperacao'">
+            <button id="home-button3" ion-button color="primary" block icon-left style="text-align: left;" on-click="goToRecuperacao()">
+              <ion-icon name="school"></ion-icon>
+              Calcular Resultado
+            </button>
+        </div>
+    </div>
+    <!-- Botão: Disciplinas 30h -->
+    <button id="home-button7" ion-button color="secondary" block icon-left style="text-align: left;" on-click="goToTrintahoras()">
+      <ion-icon name="alert"></ion-icon>
+      Disciplinas de 30h
+    </button>
+    <!-- Botão: Ajuda -->
+    <!--
+    <button id="home-button11" ion-button color="secondary" icon-left style="text-align: left;" on-click="goToAjuda()">
+      <ion-icon name="book"></ion-icon>
+      Ajuda?!
+    </button>
+    -->
+  <!-- Espaço -->
+  <div class="spacer" style="width: 300px; height: 20px;" id="home-spacer16"></div>
+  <!-- Barra de status: Score / Nota Unidade 3 -->
+  <div id="home-markdown15" style="text-align: center;" class="show-list-numbers-and-dots">
+    <p style="color: #8A8A8A; font-size: 16px;">
+      <strong>
+        Score:
+      </strong>
+      <!-- score = (u1 x 4 + u2 x 5 + u3 x 6) -->
+      {{ score }} / 104.3 &nbsp; | &nbsp;
+      <strong>
+        3ª Unidade:
+      </strong>
+        <!-- 3ª Unidade = ((104.3 - score) / 6) -->
+        {{ unidade3 }}
+    </p>
+  </div>
+  <!-- Espaço -->
+  <div class="spacer" style="width: 300px; height: 30px;" id="home-spacer14"></div>
+  <!-- Texto/Rodapé: Desenvolvido por <3 spaceLab -->
+  <div id="home-markdown11" style="text-align: center;" class="show-list-numbers-and-dots">
+    <p style="color: #BDBDBD; font-size: 12px;">
+      Desenvolvido &nbsp;&#10084;&nbsp; por
+      <strong>
+        spaceLabs
+      </strong>
+    </p>
+  </div>
+</ion-content>

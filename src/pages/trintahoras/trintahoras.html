@@ -1,0 +1,84 @@
+<ion-content padding class="no-scroll" style="background: url(assets/img/home.png) no-repeat center; background-size: cover; background-color: #FFFFFF;" id="page5">
+  <!-- Espaço -->
+  <div class="spacer" style="width: 300px; height: 170px;" id="trintahoras-spacer8"></div>
+  <!--/Inputs: Notas unidade_1, unidade_2 e Botões: Calcular, Ajuda, Disciplinas 60/90h-->
+    <!-- Espaço -->
+    <div class="spacer" style="width: 300px; height: 10px;" id="trintahoras-spacer9"></div>
+    <!-- unidade_1 -->
+    <ion-item id="trintahoras-input4">
+      <ion-label></ion-label>
+      <ion-input type="number" [(ngModel)]="unidade_1" name="u1" placeholder="1ª Unidade"></ion-input>
+    </ion-item>
+    <!-- Espaço -->
+    <!-- unidade_2 -->
+    <ion-item id="trintahoras-input5">
+      <ion-label></ion-label>
+      <ion-input type="number" [(ngModel)]="unidade_2" name="u2" placeholder="2ª Unidade"></ion-input>
+    </ion-item>
+    <!-- Espaço -->
+    <div class="spacer" style="height: 5px;" id="trintahoras-spacer11"></div>
+    <!-- Switch Case: Aprovado, Recuperação, Reprovado -->
+    <div [ngSwitch]="resultadoFinal">
+        <!-- Aprovado -->
+        <div *ngSwitchCase="'aprovado'">
+            <button id="trintahoras-button1" ion-button color="calm" block icon-left style="text-align: left;" on-click="goToAprovado()">
+              <ion-icon name="school"></ion-icon>
+              Calcular Resultado
+            </button>
+        </div>
+        <!-- Reprovado -->
+        <div *ngSwitchCase="'reprovado'">
+            <button id="trintahoras-button2" ion-button color="calm" block icon-left style="text-align: left;" on-click="goToReprovado()">
+              <ion-icon name="school"></ion-icon>
+              Calcular Resultado
+            </button>
+        </div>
+        <!-- Recuperação -->
+        <div *ngSwitchCase="'recuperacao'">
+            <button id="trintahoras-button3" ion-button color="calm" block icon-left style="text-align: left;" on-click="goToRecuperacao()">
+              <ion-icon name="school"></ion-icon>
+              Calcular Resultado
+            </button>
+        </div>
+    </div>
+    <!-- Botão: Disciplinas 60/90h -->
+    <button id="trintahoras-button9" ion-button color="secondary" block icon-left style="text-align: left;" on-click="goToHome()">
+      <ion-icon name="alert"></ion-icon>
+      Disciplinas de 60h
+    </button>
+    <!-- Botão: Ajuda -->
+    <!--
+    <button id="trintahoras-button12" ion-button color="secondary" icon-left style="text-align: left;" on-click="goToAjuda()">
+      <ion-icon name="book"></ion-icon>
+      Ajuda?!
+    </button>
+    -->
+  <!-- Espaço -->
+  <div class="spacer" style="width: 300px; height: 20px;" id="trintahoras-spacer15"></div>
+  <!-- Barra de status: Score / Nota Unidade 2 -->
+  <div id="trintahoras-markdown9" style="text-align: center;" class="show-list-numbers-and-dots">
+    <p style="color: #8A8A8A; font-size: 16px;">
+      <strong>
+        Score:
+      </strong>
+      <!-- score = (u1 x 4 + u2 x 5) -->
+      {{ score }} / 62.6 &nbsp; | &nbsp;
+      <strong>
+        2ª Unidade:
+      </strong>
+        <!-- 2ª Unidade = ((62.6 - score) / 5) -->
+        {{ unidade2 }}
+    </p>
+  </div>
+  <!-- Espaço -->
+  <div class="spacer" style="width: 300px; height: 135px;" id="home-spacer14"></div>
+  <!-- Texto/Rodapé: Desenvolvido por <3 spaceLab -->
+  <div id="home-markdown11" style="text-align: center;" class="show-list-numbers-and-dots">
+    <p style="color: #BDBDBD; font-size: 12px;">
+      Desenvolvido &nbsp;&#10084;&nbsp; por
+      <strong>
+        spaceLabs
+      </strong>
+    </p>
+  </div>
+</ion-content>
